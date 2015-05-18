@@ -1,13 +1,9 @@
 # check_zmstatus
-Nagios check to monitor zimbra services status.
-Original taken from http://blog.schose.net/index.php/archives/135 and fixed.
-
 This plugin check the state of the zimbra services, asking directly to the zmcointrol status, through zimbra user. 
 
-Fixed issue with spaces in service names.
+Original taken from http://blog.schose.net/index.php/archives/135 and fixed issue with spaces in service names.
 
-Original was taken from: http://blog.schose.net/index.php/archives/135, http://andreas.ndfnet.de/showfiles/blog/check_zmstatus.pl
-
+# Installation
 We need to execute some additional commands, we need to put in the suoders file the next sentence /etc/sudoers :
 
     %nagios ALL=(zimbra) NOPASSWD:/opt/zimbra/bin/zmcontrol
