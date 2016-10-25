@@ -45,7 +45,7 @@ close(ZMCONTROL);
 my $i;
 # parse every line exept the first
 for ($i=1; $i<@zmcontent;$i++) {
-        if  ($zmcontent[$i] =~ m/\s([a-zA-Z ]+)\s{2,}(\w+)/g) {
+        if  ($zmcontent[$i] =~ m/\s([a-zA-Z\-]+)\s{2,}(\w+)/g) {
                 if ($2 ne "Running") {
                         push @failed_services, $1;
 
@@ -58,7 +58,7 @@ if (( @failed_services == 0 ) && ($i > 5)) {
         print "OK: every service is running fine\n";
         exit 0; # OK
 } else {
-        print "Critical: " . join(',', @failed_services) . " not running";
+        print "Critical: " . join(', ', @failed_services) . " not running";
         exit 2; # Error
 }        
 
